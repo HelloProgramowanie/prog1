@@ -1,2 +1,3 @@
-# prog1
-Prog1 excercises solved
+# Programowanie 1
+
+Postaram się umieścić tu wszystkie zadania i rozwiązania.
