@@ -4,7 +4,7 @@ Postaram się umieścić tu wszystkie zadania i rozwiązania przedmiotu *Progra
 
 ## Hello World!
 ```c
-#include "stdio.h"
+#include <stdio.h>
 
 int main(){
   printf("Hello World!\n");
