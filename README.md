@@ -58,15 +58,21 @@ int main()
 ```c
 #include <stdio.h>
 
+#define PI 3.14159265359f
 int main()
 {
   float R;
   printf("R=");
   scanf("%f", &R);
-  printf("V=%f", 3.14f*4/3*R*R*R);
+  printf("V=%f", PI*4/3*R*R*R); 
   return 0;
 }
 ```
+Wykorzystując że w przypadku operatorów dwuargumentowych łączność określa, w jaki sposób grupowane jest wykonywanie wyrażenia. `*` i `/` (i `%`) się wykonuje *od lewej do prawej*.
+  * `float*int=float`
+  * `float/int=float`
+
+Nie działa jeśli liczymy `4/3*R*R*R*PI`, przecież `int/int=int`, w tym przypadku `4/3=1`. Żeby zapobiec błędów możemy używać `float` *wszędzie* w ten sposób: `4.0f/3.0f*R*R*R*PI`.
 ## Zadanie 3
 ```c
 #include <stdio.h>
@@ -96,6 +102,7 @@ int main(){
   return 0;
 }
 ```
+wykorzystując że `x*2-x=x` , oraz `x/(1/y)=x*y`
 ## Zadanie 5
 ```c
 #include <stdio.h>
