@@ -42,3 +42,77 @@ int main(){
 * [Najlepsze edytory tekstu na Windows (LMGTFY)](https://www.google.com/search?q=code+editor+for+windows)
 * [15 najczęściej używanych opcji kompilatora *gcc*](https://www.thegeekstuff.com/2012/10/gcc-compiler-options/)
 
+# Lista 1
+## Zadanie 1
+```c
+#include <stdio.h>
+
+int main()
+{
+  printf("Jan Kowalski, adres: 48-140 Wodka, ul. Przykladowa 1, tel.: 696969696");
+  return 0;
+}
+
+```
+## Zadanie 2
+```c
+#include <stdio.h>
+
+int main()
+{
+  float R;
+  printf("R=");
+  scanf("%f", &R);
+  printf("V=%f", 3.14f*4/3*R*R*R);
+  return 0;
+}
+```
+## Zadanie 3
+```c
+#include <stdio.h>
+
+int main(){
+  int A,B,C,D;
+  printf("A=");
+  scanf("%d",&A);
+  printf("B=");
+  scanf("%d",&B);
+  printf("C=");
+  scanf("%d",&C);
+  D = B*B-4*A*C;
+  printf("D=%d",D);
+  return 0;
+}
+```
+## Zadanie 4
+```c
+#include <stdio.h>
+
+int main(){
+  int c;
+  printf("C=");
+  scanf("%d",&c);
+  printf("%d",(c*2-c+5)/(1.0/c*c));
+  return 0;
+}
+```
+## Zadanie 5
+```c
+#include <stdio.h>
+
+int main(){
+  int a,b;
+  printf("A=");
+  scanf("%d",&a);
+  printf("B=");
+  scanf("%d",&b);
+  printf("%d+%d=%d | ", a, b, a+b);
+  printf("%d-%d=%d | ", a, b, a-b);
+  printf("%d*%d=%d | ", a, b, a*b);
+  printf("%d/%d=", a, b);
+  if(b!=0){printf("%d | ", a/b);} else{printf("n/a | ");}
+  printf("%d%%%d = ", a, b);
+  if(b!=0){printf("%d", a%b);} else{printf("n/a");}
+  return 0;
+}
+```
