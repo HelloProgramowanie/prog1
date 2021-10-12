@@ -89,10 +89,10 @@ int main(){
 #include <stdio.h>
 
 int main(){
-  int c;
+  int C;
   printf("C=");
-  scanf("%d",&c);
-  printf("%d",(c+5)*c*c);
+  scanf("%d",&C);
+  printf("%d",(C+5)*C*C);
   return 0;
 }
 ```
