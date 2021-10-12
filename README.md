@@ -111,7 +111,7 @@ int main(){
   printf("%d*%d=%d | ", a, b, a*b);
   printf("%d/%d=", a, b);
   if(b!=0){printf("%d | ", a/b);} else{printf("n/a | ");}
-  printf("%d%%%d = ", a, b);
+  printf("%d%%%d=", a, b);
   if(b!=0){printf("%d", a%b);} else{printf("n/a");}
   return 0;
 }
