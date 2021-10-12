@@ -92,7 +92,7 @@ int main(){
   int c;
   printf("C=");
   scanf("%d",&c);
-  printf("%d",(c*2-c+5)/(1.0/c*c));
+  printf("%d",(c+5)*c*c);
   return 0;
 }
 ```
