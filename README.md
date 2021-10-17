@@ -64,7 +64,7 @@ int main()
   float R;
   printf("R=");
   scanf("%f", &R);
-  printf("V=%f", PI*4/3*R*R*R); 
+  printf("P=%f, oraz V=%f", PI*4*R*R, PI*4/3*R*R*R); 
   return 0;
 }
 ```
