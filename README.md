@@ -98,7 +98,8 @@ int main(){
   int C;
   printf("C=");
   scanf("%d",&C);
-  printf("%d",(C+5)*C*C);
+  if(C!=0) printf("%d",(C+5)*C*C);
+  else print("error: Dzielenie z 0");
   return 0;
 }
 ```
