@@ -74,6 +74,7 @@ Wykorzystując że w przypadku operatorów dwuargumentowych łączność określ
 
 Nie działa jeśli liczymy `4/3*R*R*R*PI`, przecież `int/int=int`, w tym przypadku `4/3=1`. Żeby zapobiec błędów możemy używać `float` *wszędzie* w ten sposób: `4.0f/3.0f*R*R*R*PI`.
 ## Zadanie 3
+Jeżeli oczekujemy podanych liczb *całkowitych*:
 ```c
 #include <stdio.h>
 
@@ -87,6 +88,23 @@ int main(){
   scanf("%d",&C);
   D = B*B-4*A*C;
   printf("D=%d",D);
+  return 0;
+}
+```
+Jeżeli oczekujemy podanych liczb *rzeczywistych*:
+```c
+#include <stdio.h>
+
+int main(){
+  float A,B,C,D;
+  printf("A=");
+  scanf("%f",&A);
+  printf("B=");
+  scanf("%f",&B);
+  printf("C=");
+  scanf("%f",&C);
+  D = B*B-4*A*C;
+  printf("D=%f",D);
   return 0;
 }
 ```
