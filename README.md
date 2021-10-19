@@ -142,3 +142,35 @@ int main(){
   return 0;
 }
 ```
+# Lista 2
+## Zadanie 1
+```c
+#include <stdio.h>
+
+int main(){
+    char c;
+    printf("Podaj znak a-z lub A-Z: ");
+    c = getchar();
+    if(c < 'a') printf("%c, %c\n", c, c+32);
+    else printf("%c, %c\n", c-32, c);
+    return 0;
+}
+```
+## Zadanie 2
+```c
+#include <stdio.h>
+
+int main(){
+    int PARZYSTY = 0;
+    int x;
+    printf("Podaj 3 liczby:\n");
+    for(int i=1; i<=3; i++){
+        printf("%d. liczba: ", i);
+        scanf("%d", &x);
+        if(x%2 == 0) PARZYSTY = 1;
+    }
+    if(PARZYSTY == 1) printf("Byla parzysta.");
+    else printf("Nie bylo parzystej.");
+    return 0;
+}
+```
