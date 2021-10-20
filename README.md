@@ -275,12 +275,12 @@ int main(){
 #include <stdio.h>
 
 int main(){
-    int liczba;
+    int x;
     printf("Podaj liczbe calkowita > 99: ");
-    scanf("%d", &liczba);
-    int j = liczba % 10;
-    int d = (liczba / 10) % 10;
-    int s = liczba / 100;
+    scanf("%d", &x);
+    int j = x % 10;
+    int d = (x / 10) % 10;
+    int s = x / 100;
     printf("%d jednosci, %d dziesiatek, i %d setek", j, d, s);
     return 0;
 }
