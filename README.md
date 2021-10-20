@@ -269,3 +269,19 @@ int main(){
     return 0;
 }
 ```
+## Zadanie 5
+![Schemat blokowy L2Z5](https://github.com/HelloProgramowanie/prog1/blob/main/L2Z5.drawio.png)
+```c
+#include <stdio.h>
+
+int main(){
+    int liczba;
+    printf("Podaj liczbe calkowita > 99: ");
+    scanf("%d", &liczba);
+    int j = liczba % 10;
+    int d = (liczba / 10) % 10;
+    int s = liczba / 100;
+    printf("%d jednosci, %d dziesiatek, i %d setek", j, d, s);
+    return 0;
+}
+```
