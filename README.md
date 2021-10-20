@@ -245,3 +245,4 @@ int main(){
   return 0;
 }
 ```
+Do tego tego problemu może być inne podejście, np. "matematyczne". Liczba której kwadrat jest najmniejszy to liczba która jest bliżej do zera, inaczej ma najmniejszą [wartość bezwzględną](https://pl.wikipedia.org/wiki/Warto%C5%9B%C4%87_bezwzgl%C4%99dna). W języku C to jest funkcja [abs()](https://pl.wikibooks.org/wiki/C/abs). (Możemy też łatwo swoją funkcję napisać co robi to samo: `int wartosc_bezwgledna(int x){ if(x<0) return -x; else return x; }`. Jednakże tu tekst zadania każe nam liczyć kwadraty.
