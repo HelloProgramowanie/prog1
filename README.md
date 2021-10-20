@@ -149,10 +149,14 @@ int main(){
 
 int main(){
     char c;
-    printf("Podaj znak a-z lub A-Z: ");
+    printf("Podaj znak a-z: ");
     c = getchar();
-    if(c < 'a') printf("%c, %c\n", c, c+32);
-    else printf("%c, %c\n", c-32, c);
+    // tekst zadania mowi ze tutaj nie trzeba sprawdzic czy podany znak 'a' <= c <= 'z'
+    // kod ASCII dla 'A' = 01000001b = 65
+    // kod ASCII dla 'a' = 01100001b = 97
+    // zeby robic 'A' za pomoca 'a', musimi odejmowac 00100000b = 32
+    // 'a' - 32 = 'A'
+    printf("%c, %c\n", c-32, c);
     return 0;
 }
 ```
@@ -161,16 +165,46 @@ int main(){
 #include <stdio.h>
 
 int main(){
-    int PARZYSTY = 0;
-    int x;
-    printf("Podaj 3 liczby:\n");
-    for(int i=1; i<=3; i++){
-        printf("%d. liczba: ", i);
-        scanf("%d", &x);
-        if(x%2 == 0) PARZYSTY = 1;
-    }
-    if(PARZYSTY == 1) printf("Byla parzysta.");
-    else printf("Nie bylo parzystej.");
-    return 0;
+
+  int x; // Zmienna do ktorej wczytujemy liczb podanych przez uzytkownika.
+         // Wystarczy nam 1 zmienna, bo nie musimy dlugo zachowac w pamieci wprowadzonych liczb,
+         // przeciez mozemy sprawdzac parzystosc od razu po wczytywaniu.
+  
+  int ilosc_parzystych = 0;  // Ilosc parzystych licz podczas wczytywania.
+                             // Skoro jeszcze nie wczytalismy nic, na razie mamy 0 szt. parzystych,
+                             // i dokladnie dlatego inicializujemy wartosc zmiennej na 0.
+                             
+  printf("Podaj 3 liczby:\n");
+
+    // tutaj sprawdze od razu podczas wczytywania liczb, czy podana liczba jest parzysta
+    // (liczba jest parzysta, jezeli x % 2 == 0)
+    // a jezeli podana liczba jest parzysta, to wartosc zmiennej ilosc_parzystych zwiekszamy o jeden.  
+
+    printf("1. liczba: ");
+    scanf("%d", &x);
+    if(x%2 == 0) ilosc_parzystych += 1;
+
+    printf("2. liczba: ");
+    scanf("%d", &x);
+    if(x%2 == 0) ilosc_parzystych += 1;
+
+    printf("3. liczba: ");
+    scanf("%d", &x);
+    if(x%2 == 0) ilosc_parzystych += 1;
+
+    // teraz skonczylismy wczytywania (i sprawdzania) liczb musimy sprawdzic
+    // czy     ilosc_parzystych > 0     i wyswietlic komunikat wedlug tego
+
+  if(ilosc_parzystych > 0) printf("Byla parzysta.");
+  else printf("Nie bylo parzystej.");
+  return 0;
+}
+```
+Prosił żebyśmy nie używali pętl, bo dla większość nas one są zbyt nowe. Akurat tutaj bardzo dobrze widać, że część kodu (do wczytywania i sprawdzania liczb) prawie `Ctrl+c` - `Ctrl+v`. Jeśli zadanie byłoby to samo, ale byśmy musieli wczytywać 10 lub 100 lub 1000 liczb, to byśmy przecież nie robili pojedynczo. Wtedy za pomocą petli:
+```c
+for(int i=1; i<=3; i++){
+  printf("%d. liczba: ",i);
+  scanf("%d", &x);
+  if(x%2 == 0) ilosc_parzystych += 1;
 }
 ```
