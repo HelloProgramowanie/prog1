@@ -41,6 +41,7 @@ int main(){
 * [Najlepsze edytory tekstu na Linux (LMGTFY)](https://www.google.com/search?q=code+editor+for+linux)
 * [Najlepsze edytory tekstu na Windows (LMGTFY)](https://www.google.com/search?q=code+editor+for+windows)
 * [15 najczęściej używanych opcji kompilatora *gcc*](https://www.thegeekstuff.com/2012/10/gcc-compiler-options/)
+* [Online edytor schematu blokowego](https://app.diagrams.net/)
 
 # Lista 1
 ## Zadanie 1
