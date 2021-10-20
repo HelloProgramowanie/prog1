@@ -211,4 +211,37 @@ for(int i=1; i<=3; i+=1){
   if(x%2 == 0) ilosc_parzystych += 1;
 }
 ```
+## Zadanie 3
+![Schemat blokowy L2Z3](https://github.com/HelloProgramowanie/prog1/blob/main/L2Z3.drawio.png)
+```c
+#include <stdio.h>
 
+int main(){
+  int a, b, c, najmniejszy, a_kw, b_kw, c_kw;
+  printf("Podaj 3 liczby calkowite:\n");
+  printf("a = ");
+  scanf("%d", &a);
+  printf("b = ");
+  scanf("%d", &b);
+  printf("c = ");
+  scanf("%d", &c);
+  a_kw=a*a;
+  b_kw=b*b;
+  c_kw=c*c;
+  if(a_kw<b_kw){
+    if(a_kw<c_kw){
+      najmniejszy = a;
+    } else {
+      najmniejszy = c;
+    }
+  } else {
+    if(b_kw<c_kw){
+      najmniejszy = b;
+    } else {
+      najmniejszy = c;
+    }
+  }
+  printf("%d ma najmniejszy kwadrat.\n", najmniejszy);
+  return 0;
+}
+```
