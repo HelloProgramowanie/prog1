@@ -285,3 +285,18 @@ int main(){
     return 0;
 }
 ```
+## Zadanie 6
+![Schemat blokowy L2Z6](https://github.com/HelloProgramowanie/prog1/blob/main/L2Z6.drawio.png)
+```c
+#include <stdio.h>
+
+int main(){
+    int x;
+    printf("Podaj liczbe calkowita: ");
+    scanf("%d", &x);
+    int i = 0;
+    while (i*i < x){ i++; }
+    if(i*i == x) printf("Ta liczba jest kwadratowa.");
+    else printf("Ta liczba nie jest kwadratowa.");
+}
+```
