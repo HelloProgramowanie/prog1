@@ -247,3 +247,24 @@ int main(){
 }
 ```
 Do tego tego problemu może być inne podejście, np. "matematyczne". Liczba której kwadrat jest najmniejszy to liczba która jest bliżej do zera, inaczej ma najmniejszą [wartość bezwzględną](https://pl.wikipedia.org/wiki/Warto%C5%9B%C4%87_bezwzgl%C4%99dna). W języku C to jest funkcja [abs()](https://pl.wikibooks.org/wiki/C/abs). (Możemy też łatwo swoją funkcję napisać co robi to samo: `int wartosc_bezwgledna(int x){ if(x<0) return -x; else return x; }`. Jednakże tu tekst zadania każe nam liczyć kwadraty.
+## Zadanie 4
+![Schemat blokowy L2Z4](https://github.com/HelloProgramowanie/prog1/blob/main/L2Z4.drawio.png)
+```c
+#include <stdio.h>
+
+int main(){
+    int min, x;
+    printf("Podaj 5 liczb:\n");
+    scanf("%d", &min);
+    scanf("%d", &x);
+    if(x<min) min=x;
+    scanf("%d", &x);
+    if(x<min) min=x;
+    scanf("%d", &x);
+    if(x<min) min=x;
+    scanf("%d", &x);
+    if(x<min) min=x;
+    printf("Minimalna: %d", min);
+    return 0;
+}
+```
