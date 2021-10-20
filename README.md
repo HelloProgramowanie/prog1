@@ -161,6 +161,7 @@ int main(){
 }
 ```
 ## Zadanie 2
+![Schemat blokowy L2Z2](https://github.com/HelloProgramowanie/prog1/blob/main/L2Z2.drawio.png)
 ```c
 #include <stdio.h>
 
@@ -200,11 +201,14 @@ int main(){
   return 0;
 }
 ```
-Prosił żebyśmy nie używali pętl, bo dla większość nas one są zbyt nowe. Akurat tutaj bardzo dobrze widać, że część kodu (do wczytywania i sprawdzania liczb) prawie `Ctrl+c` - `Ctrl+v`. Jeśli zadanie byłoby to samo, ale byśmy musieli wczytywać 10 lub 100 lub 1000 liczb, to byśmy przecież nie robili pojedynczo. Wtedy za pomocą petli:
+Prosił żebyśmy nie używali pętli, bo dla większość nas one są zbyt nowe. Akurat tutaj bardzo dobrze widać, że część kodu (do wczytywania i sprawdzania liczb) prawie `Ctrl+c` - `Ctrl+v`. Jeśli zadanie byłoby to samo, ale byśmy musieli wczytywać 10 lub 100 lub 1000 liczb, to byśmy przecież nie robili pojedynczo. Wtedy za pomocą petli [**for**](https://en.wikipedia.org/wiki/For_loop):
+
+![Schemat blokowy L2Z2b](https://github.com/HelloProgramowanie/prog1/blob/main/L2Z2b.drawio.png)
 ```c
-for(int i=1; i<=3; i++){
+for(int i=1; i<=3; i+=1){
   printf("%d. liczba: ",i);
   scanf("%d", &x);
   if(x%2 == 0) ilosc_parzystych += 1;
 }
 ```
+
