@@ -286,7 +286,42 @@ int main(){
 }
 ```
 ## Zadanie 6
+### Za pomocą rzutowania
 ![Schemat blokowy L2Z6](https://github.com/HelloProgramowanie/prog1/blob/main/L2Z6.drawio.png)
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+  int a, pierwiastek;
+  printf("Podaj liczbe calkowita: ");
+  scanf("%d", &a);
+  pierwiastek = (int) sqrt(a);
+  if(pierwiastek * pierwiastek == a){
+    printf("Ta liczba jest kwadratowa.");
+  } else {
+    printf("Ta liczba nie jest kwadratowa.");
+  }
+  return 0;
+}
+```
+Funkcja `sqrt(a)` powie dokladnie ile jest pierwiastek liczby `a`, zwraca typ `double`. Jeśli rzutujemy `double` na `int`, to odrzuczymy wszystko po przecinku. To wykorzystujemy w tym programie. 
+Przykłady:
+
+| a | sqrt(a) | pierwiastek = (int) sqrt(a) | pierwiastek² | pierwiastek² == a? |
+|---|---------|-----------------------------|--------------|--------------------|
+| 0 | 0.000000 | 0 | 0 | tak |
+| 1 | 1.000000 | 1 | 1 | tak |
+| 2 | 1.414214 | 1 | 1 | nie |
+| 3 | 1.732051 | 1 | 1 | nie |
+| 4 | 2.000000 | 2 | 4 | tak |
+| 5 | 2.236068 | 2 | 4 | nie |
+| 6 | 2.449490 | 2 | 4 | nie |
+| 7 | 2.645751 | 2 | 4 | nie |
+| 8 | 2.828427 | 2 | 4 | nie |
+| 9 | 3.000000 | 3 | 9 | tak |
+### Za pomocą pętli
+![Schemat blokowy L2Z6b](https://github.com/HelloProgramowanie/prog1/blob/main/L2Z6b.drawio.png)
 ```c
 #include <stdio.h>
 
@@ -295,7 +330,7 @@ int main(){
     printf("Podaj liczbe calkowita: ");
     scanf("%d", &x);
     int i = 0;
-    while (i*i < x){ i++; }
+    while (i*i < x){ i++; } // szukamy najmniejsza liczbe kwadratowa ktora jest nie mniejsza niz podana liczba
     if(i*i == x) printf("Ta liczba jest kwadratowa.");
     else printf("Ta liczba nie jest kwadratowa.");
 }
