@@ -335,3 +335,39 @@ int main(){
     else printf("Ta liczba nie jest kwadratowa.");
 }
 ```
+# Lista 3
+## Zadanie 1
+![Schemat blokowy L3Z1](https://github.com/HelloProgramowanie/prog1/blob/main/L3Z1.drawio.png)
+```c
+#include <stdio.h>
+#include <string.h>
+#include <conio.h>
+
+int main(){
+
+    char JESZCZERAZ;
+
+    do{
+        char slowo[50];
+        printf("Podaj slowo: ");
+        scanf("%s", slowo);
+        int len = strlen(slowo);
+        int i;
+        int PALINDROM = 1;
+        for(i=0; i<len/2; i++){
+            if(slowo[i] != slowo[len-1-i]){
+                PALINDROM = 0;
+            }
+        }
+        if(PALINDROM == 1){
+            printf("to jest palindrom");
+        } else {
+            printf("to nie palindrom");
+        }
+
+        printf("\nWpisz 1 zeby powtorzyc, lub cos innego zeby wyjsc.\n");
+        JESZCZERAZ = getch();
+    } while (JESZCZERAZ == '1');
+    return 0;
+}
+```
