@@ -336,7 +336,7 @@ int main(){
 }
 ```
 # Lista 3
-## Zadanie 1
+## Zadanie 1 https://youtu.be/E4ZuUSWu2w0
 ![Schemat blokowy L3Z1](https://github.com/HelloProgramowanie/prog1/blob/main/L3Z1.drawio.png)
 ```c
 #include <stdio.h>
@@ -371,8 +371,7 @@ int main(){
     return 0;
 }
 ```
-[Zobacz na YouTube](https://www.youtube.com/watch?v=E4ZuUSWu2w0)
-## Zadanie 3
+## Zadanie 3 https://youtu.be/NI3Scbe2Kfg
 ![Schemat blokowy L3Z3](https://github.com/HelloProgramowanie/prog1/blob/main/L3Z3.drawio.png)
 ```c
 #include <stdio.h>
