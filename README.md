@@ -371,3 +371,39 @@ int main(){
     return 0;
 }
 ```
+## Zadanie 3
+![Schemat blokowy L3Z3](https://github.com/HelloProgramowanie/prog1/blob/main/L3Z3.drawio.png)
+```c
+#include <stdio.h>
+#include <conio.h>
+
+int main(){
+    for(char JESZCZERAZ = '1'; JESZCZERAZ=='1'; JESZCZERAZ = getch()){
+        int tablica[10];
+
+        printf("Podaj 10 liczb calkowytych:\n");
+        for(int i = 0; i < 10; i++ ){
+            printf("tablica[%d] = ", i);
+            scanf("%d", &tablica[i]);
+        }
+
+        int min=tablica[0];
+        int max=tablica[0];
+
+        for(int i = 1; i < 10; i++ ){
+            if(tablica[i] < min){
+                min = tablica[i];
+            }
+            if(tablica[i] > max){
+                max = tablica[i];
+            }
+        }
+
+        printf("Najmniejszy element: %d\n", min);
+        printf("Najwiekszy element: %d\n", max);
+
+        printf("\nWpisz 1 zeby powtorzyc, lub cos innego zeby wyjsc.\n");
+    }
+    return 0;
+}
+```
