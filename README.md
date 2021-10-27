@@ -371,6 +371,7 @@ int main(){
     return 0;
 }
 ```
+[Zobacz na YouTube](https://www.youtube.com/watch?v=E4ZuUSWu2w0)
 ## Zadanie 3
 ![Schemat blokowy L3Z3](https://github.com/HelloProgramowanie/prog1/blob/main/L3Z3.drawio.png)
 ```c
