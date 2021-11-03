@@ -437,3 +437,31 @@ int main(){
     return 0;
 }
 ```
+
+## Zadanie 5
+![Schemat blokowy L3Z5](https://github.com/HelloProgramowanie/prog1/blob/main/L3Z5.drawio.png)
+```c
+#include <stdio.h>
+
+int main(){
+    int _od, _do;
+
+    printf("Podaj liczbe 'od': ");
+    scanf("%d", &_od);
+    printf("Podaj liczbe 'do': ");
+    scanf("%d", &_do);
+
+    if(_od < _do){
+        //for(int i = _od; i<=_do; i++){
+        for(int i = _od+1; i<_do; i++){
+            if(i%2==0 && i>=0){ printf("%d ", i);}
+        }
+    }else{
+        //for(int i = _od; i>=_do; i--){
+        for(int i = _od-1; i>_do; i--){
+            if(i%2==0 && i>=0){ printf("%d ", i);}
+        }
+    }
+    return 0;
+}
+```
