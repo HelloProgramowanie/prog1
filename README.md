@@ -407,3 +407,33 @@ int main(){
     return 0;
 }
 ```
+## Zadanie 4
+![Schemat blokowy L3Z4](https://github.com/HelloProgramowanie/prog1/blob/main/L3Z4.drawio.png)
+```c
+#include <stdio.h>
+#include <conio.h>
+
+int main(){
+    unsigned int n;
+    char JESZCZERAZ;
+    do{
+        printf("Podaj liczbe calkowita dodatnia n>=1: ");
+        scanf("%u", &n);
+
+        printf("1");
+
+        float suma = 1.0;
+
+        for(unsigned int k=2; k <= n; k++){
+            printf(" + 1/%u", k);
+            suma += 1.0/k;
+        }
+
+        printf(" = %f\n", suma);
+
+        printf("Wykonac jeszcze raz? Nacisnij 't' jesli tak, oraz cokolwiek inne zeby wyjsc.\n");
+        JESZCZERAZ = getch();
+    } while( getch() == 't');
+    return 0;
+}
+```
