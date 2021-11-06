@@ -431,9 +431,9 @@ int main(){
 
         printf(" = %f\n", suma);
 
-        printf("Wykonac jeszcze raz? Nacisnij 't' jesli tak, oraz cokolwiek inne zeby wyjsc.\n");
+        printf("Wykonac jeszcze raz? Nacisnij 't' jesli tak, lub cokolwiek inne zeby wyjsc.\n");
         JESZCZERAZ = getch();
-    } while( getch() == 't');
+    } while( JESZCZERAZ == 't');
     return 0;
 }
 ```
