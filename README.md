@@ -371,6 +371,32 @@ int main(){
     return 0;
 }
 ```
+## Zadanie 2
+![Schemat blokowy L3Z2](https://github.com/HelloProgramowanie/prog1/blob/main/L3Z2.drawio.png)
+```c
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+
+int main(){
+    do{
+        printf("Podaj liczbe 0<n<10:\n");
+        int n;
+        scanf("%d", &n);
+
+        int wynik = 1;
+
+        for (int i=2; i<=n; i++){
+            wynik *= i;
+        }
+
+        printf("%d! = %d\n", n, wynik);
+
+        printf("Powtorka? nacisnij 'T' jesli tak.\n");
+    } while(toupper(getch()) == 'T');
+    return 0;
+}
+```
 ## Zadanie 3 https://youtu.be/NI3Scbe2Kfg
 ![Schemat blokowy L3Z3](https://github.com/HelloProgramowanie/prog1/blob/main/L3Z3.drawio.png)
 ```c
