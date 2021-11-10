@@ -491,3 +491,100 @@ int main(){
     return 0;
 }
 ```
+
+# Lista 4
+## Zadanie 1
+![Schemat blokowy L4Z1](https://github.com/HelloProgramowanie/prog1/blob/main/L4Z1.drawio.png)
+```c
+#include <stdio.h>
+
+int main(){
+    int n;
+    do{
+        printf("Podaj N: ");
+        do {
+            scanf("%d", &n);
+        } while(n<1 || n>15);
+        
+        // MAGIC
+
+        printf("Powtorka? 'T' = tak\n\n");
+    } while(toupper(getch()) == 'T');
+}
+
+```
+### a
+![Schemat blokowy L4Z1a](https://github.com/HelloProgramowanie/prog1/blob/main/L4Z1a.drawio.png)
+```c
+        for(int i=1; i<=n; i++){
+            ile_gwiazdek = i;
+            while(ile_gwiazdek > 0){ printf("*"); ile_gwiazdek--; }
+            printf("\n");
+        }
+```
+### b
+![Schemat blokowy L4Z1b](https://github.com/HelloProgramowanie/prog1/blob/main/L4Z1b.drawio.png)
+```c
+        for(int i=1; i<=n; i++){
+            ile_gwiazdek = n-i+1;
+            while(ile_gwiazdek > 0){ printf("*"); ile_gwiazdek--; }
+            printf("\n");
+        }
+```
+### c
+![Schemat blokowy L4Z1c](https://github.com/HelloProgramowanie/prog1/blob/main/L4Z1c.drawio.png)
+```c
+        for(int i=1; i<=n; i++){
+            ile_spacji = n-i;
+            while(ile_spacji > 0){ printf(" "); ile_spacji--; }
+            ile_gwiazdek = i*2-1;
+            while(ile_gwiazdek > 0){ printf("*"); ile_gwiazdek--; }
+            printf("\n");
+        }
+
+```
+### d
+![Schemat blokowy L4Z1d](https://github.com/HelloProgramowanie/prog1/blob/main/L4Z1d.drawio.png)
+```c
+        for(int i=1; i<=n; i++){
+            ile_spacji = i-1;
+            while(ile_spacji > 0){ printf(" "); ile_spacji--; }
+            ile_gwiazdek = (n-i)*2+1;
+            while(ile_gwiazdek > 0){ printf("*"); ile_gwiazdek--; }
+            printf("\n");
+        }
+```
+### e
+![Schemat blokowy L4Z1e](https://github.com/HelloProgramowanie/prog1/blob/main/L4Z1e.drawio.png)
+```c
+        printf("jesli n jest parzysty, bedzie traktowany jako n+1 (%d)\n", n+1);
+        for(int i=1; i<=n/2+1; i++){
+            ile_gwiazdek = i;
+            while(ile_gwiazdek > 0){ printf("*"); ile_gwiazdek--; }
+            printf("\n");
+        }
+        for(int i=1; i<=n/2; i++){
+            ile_gwiazdek = n/2+1-i;
+            while(ile_gwiazdek > 0){ printf("*"); ile_gwiazdek--; }
+            printf("\n");
+        }
+```
+### f
+![Schemat blokowy L4Z1f](https://github.com/HelloProgramowanie/prog1/blob/main/L4Z1f.drawio.png)
+```c
+        printf("jesli n jest parzysty, bedzie traktowany jako n+1 (%d)\n", n+1);
+        for(int i=1; i<=n/2+1; i++){
+            ile_spacji = n/2+1-i;
+            while(ile_spacji > 0){ printf(" "); ile_spacji--; }
+            ile_gwiazdek = i;
+            while(ile_gwiazdek > 0){ printf("*"); ile_gwiazdek--; }
+            printf("\n");
+        }
+        for(int i=1; i<=n/2; i++){
+            ile_spacji = i;
+            while(ile_spacji > 0){ printf(" "); ile_spacji--; }
+            ile_gwiazdek = n/2+1-i;
+            while(ile_gwiazdek > 0){ printf("*"); ile_gwiazdek--; }
+            printf("\n");
+        }
+```
