@@ -513,7 +513,7 @@ int main(){
 }
 
 ```
-### a
+### Zadanie 1.a
 ![Schemat blokowy L4Z1a](https://github.com/HelloProgramowanie/prog1/blob/main/L4Z1a.drawio.png)
 ```c
         for(int i=1; i<=n; i++){
@@ -522,7 +522,7 @@ int main(){
             printf("\n");
         }
 ```
-### b
+### Zadanie 1.b
 ![Schemat blokowy L4Z1b](https://github.com/HelloProgramowanie/prog1/blob/main/L4Z1b.drawio.png)
 ```c
         for(int i=1; i<=n; i++){
@@ -531,7 +531,7 @@ int main(){
             printf("\n");
         }
 ```
-### c
+### Zadanie 1.c
 ![Schemat blokowy L4Z1c](https://github.com/HelloProgramowanie/prog1/blob/main/L4Z1c.drawio.png)
 ```c
         for(int i=1; i<=n; i++){
@@ -543,7 +543,7 @@ int main(){
         }
 
 ```
-### d
+### Zadanie 1.d
 ![Schemat blokowy L4Z1d](https://github.com/HelloProgramowanie/prog1/blob/main/L4Z1d.drawio.png)
 ```c
         for(int i=1; i<=n; i++){
@@ -554,7 +554,7 @@ int main(){
             printf("\n");
         }
 ```
-### e
+### Zadanie 1.e
 ![Schemat blokowy L4Z1e](https://github.com/HelloProgramowanie/prog1/blob/main/L4Z1e.drawio.png)
 ```c
         printf("jesli n jest parzysty, bedzie traktowany jako n+1 (%d)\n", n+1);
@@ -569,7 +569,7 @@ int main(){
             printf("\n");
         }
 ```
-### f
+### Zadanie 1.f
 ![Schemat blokowy L4Z1f](https://github.com/HelloProgramowanie/prog1/blob/main/L4Z1f.drawio.png)
 ```c
         printf("jesli n jest parzysty, bedzie traktowany jako n+1 (%d)\n", n+1);
