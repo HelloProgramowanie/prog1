@@ -557,7 +557,7 @@ int main(){
 ### Zadanie 1.e
 ![Schemat blokowy L4Z1e](https://github.com/HelloProgramowanie/prog1/blob/main/L4Z1e.drawio.png)
 ```c
-        printf("jesli n jest parzysty, bedzie traktowany jako n+1 (%d)\n", n+1);
+        printf("jesli n jest parzysty, bedzie traktowany jako n+1\n");
         for(int i=1; i<=n/2+1; i++){
             ile_gwiazdek = i;
             while(ile_gwiazdek > 0){ printf("*"); ile_gwiazdek--; }
@@ -572,7 +572,7 @@ int main(){
 ### Zadanie 1.f
 ![Schemat blokowy L4Z1f](https://github.com/HelloProgramowanie/prog1/blob/main/L4Z1f.drawio.png)
 ```c
-        printf("jesli n jest parzysty, bedzie traktowany jako n+1 (%d)\n", n+1);
+        printf("jesli n jest parzysty, bedzie traktowany jako n+1\n");
         for(int i=1; i<=n/2+1; i++){
             ile_spacji = n/2+1-i;
             while(ile_spacji > 0){ printf(" "); ile_spacji--; }
