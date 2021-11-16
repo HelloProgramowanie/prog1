@@ -756,6 +756,8 @@ int main(){
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <ctype.h>
+#include <conio.h>
 
 // kod z laboratorium
 typedef struct {
