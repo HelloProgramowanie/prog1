@@ -693,3 +693,48 @@ int main(){
                                      // jezeli uzytkownik ma CapsLock wlaczony
 }
 ```
+## Zadanie 4
+```c
+// printf() scanf()
+#include <stdio.h>
+
+// srand() rand()
+#include <stdlib.h>
+
+// time()
+#include <time.h>
+
+// kod z wykladu
+void zamiana(int *x, int *y){
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+int main(){
+    // kod z wykladu
+    srand((unsigned int)time(NULL));
+
+    // uzupelnienie zbioru liczb
+    int zbior_liczb[900];
+    for(int i=0;i<=899;i++){
+        zbior_liczb[i]=100+i;
+    }
+
+    printf("Mieszanie:    0%");
+    
+    // dostatecznie duzo razy wymienimy dwuch losowych elementow zbioru
+    for(int i=1; i<=100000000; i++){
+        // zeby uzytkownik sie nie nudzil... ;)
+        if(i%1000000==0) printf("%c%c%c%c%3d%%",8,8,8,8, i/1000000);  // printf("%c", 8); = backspace
+        
+        zamiana(&zbior_liczb[rand()%900], &zbior_liczb[rand()%900]);
+    }
+    
+    // teraz pierwszy 5 element zbioru sa losowe, mozemy je wypisac.
+    printf("\n5 roznich losowych liczb:");
+    for (int i=0; i<5; i++) printf(" %d", zbior_liczb[i]);
+
+    return 0;
+}
+```
