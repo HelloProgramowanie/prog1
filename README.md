@@ -604,3 +604,40 @@ int main(){
     printf("%d",a);
 }
 ```
+## Zadanie 2 (
+```c#include <stdio.h>
+#include <stdio.h>
+#include <string.h>
+
+char x_mod_y(int x, int y){
+    int wynik = x%y;
+    if(wynik<10) return '0'+wynik;
+    else return 'A'-10+wynik;
+}
+
+int main(){
+
+    int liczba_do_konwertowania;
+    int system = 2;
+    char wynik[17];
+    int i,a;
+
+    do{
+        printf("Podaj liczbe dziesiatna do konwertowania: ");
+        scanf("%d",&liczba_do_konwertowania);
+        //printf("Na jaki system konwertowac: ");
+        //scanf("%d",&system);
+        a=liczba_do_konwertowania;
+        for(i=0; a>0; i++){
+            //printf("%2d |%6d %% %d = %c\n",i,a,system,x_mod_y(a,system));
+            wynik[i] = x_mod_y(a,system);
+            a/=system;
+        }
+        wynik[i]=0; // koniec lancuchu znakow
+        strrev(wynik); // trzeba odwrocic wynik
+        printf("%d (10) = %s (%d)\n",liczba_do_konwertowania, wynik, system);
+
+        printf("Powtorka? t=tak\n");
+    } while (toupper(getch())=='T');
+}
+```
