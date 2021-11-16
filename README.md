@@ -604,71 +604,23 @@ int main(){
     printf("%d",a);
 }
 ```
-## Zadanie 2
-```c
+## Zadanie 2 oraz Zadanie 3
+```c// printf() scanf()
 #include <stdio.h>
+
+// strrev()
 #include <string.h>
 
-int main(){
+// toupper()
+#include <ctype.h>
 
-    int liczba_do_konwertowania;
-    char wynik[17];
-    int i,a;
+// getch()
+#include <conio.h>
 
-    do{
-        printf("Podaj liczbe dziesiatna do konwertowania: ");
-        scanf("%d",&liczba_do_konwertowania);
-        a=liczba_do_konwertowania;
-        for(i=0; a>0; i++){
-            wynik[i] = a%2+'0';
-            a/=2;
-        }
-        wynik[i]=0; // koniec lancuchu znakow
-        strrev(wynik); // trzeba odwrocic wynik
-        printf("%d (10) = %s (2)\n",liczba_do_konwertowania, wynik);
 
-        printf("Powtorka? t=tak\n");
-    } while (toupper(getch())=='T');
-}
-```
-## Zadanie 3
-```c
-#include <stdio.h>
-#include <string.h>
-
-char x_mod_16(int x){
-    int wynik = x%16;
-    if(wynik<10) return '0'+wynik;
-    else return 'A'-10+wynik;
-}
-
-int main(){
-
-    int liczba_do_konwertowania;
-    char wynik[17];
-    int i,a;
-
-    do{
-        printf("Podaj liczbe dziesiatna do konwertowania: ");
-        scanf("%d",&liczba_do_konwertowania);
-        a=liczba_do_konwertowania;
-        for(i=0; a>0; i++){
-            wynik[i] = x_mod_16(a);
-            a/=16;
-        }
-        wynik[i]=0; // koniec lancuchu znakow
-        strrev(wynik); // trzeba odwrocic wynik
-        printf("%d (10) = %s (16)\n",liczba_do_konwertowania, wynik);
-
-        printf("Powtorka? t=tak\n");
-    } while (toupper(getch())=='T');
-}
-```
-## Zadanie 2 i 3 uogólniony
-```c
-#include <stdio.h>
-#include <string.h>
-
+// Funkcja x_mod_y wraca znak ze zakresu <'0', '9'> lub <'A', 'Z'>
+// wynik tej funkcji = ostatnia liczba po konwersji liczby x do
+// systemu y-owego
 char x_mod_y(int x, int y){
     int wynik = x%y;
     if(wynik<10) return '0'+wynik;
@@ -679,26 +631,64 @@ int main(){
 
     int liczba_do_konwertowania;
     int system_liczb;
-    char wynik[17];
-    int i,a;
+    
+    char wynik[17]; // lancuch znakow o dlugosci 17
+                    // bo 16 znakow potrzebne zeby zapisac 65535
+                    // w systemie binarnym, oraz jeszcze jeden,
+                    // aby tam umiescic 0 (0 = koniec tekstu)
+                    
+    int i,a; // do pozniejszych liczen
 
     do{
-        printf("Podaj liczbe dziesiatna do konwertowania: ");
+        // Wczytanie liczby do konwertowania
+        printf("Jaka liczbe dziesiatna konwertujemy? <0; 65535>\n Liczba do konwertowania: ");
         scanf("%d",&liczba_do_konwertowania);
-        printf("Na jaki system liczb konwertowac: ");
+        
+        // Sprawdzenie czy liczba prawidlowa, jesli nie, to zaczynami znowu od poczatku
+        if(liczba_do_konwertowania < 0){ printf("Liczba jest ujemna :(\n"); continue; }
+        if(liczba_do_konwertowania == 0){ printf("0 w kazdym systemie liczb jest 0\n"); continue; }
+        if(liczba_do_konwertowania > 65535){ printf("Liczba jest za duza :(\n"); continue; }
+        // Jesli nie zaczynalismy od poczatku, to znaczy ze liczba prawidlowa, mozemy dalej dzialac
+        
+        // Wczytanie systemu liczb
+        printf("Na jaki system liczb konwertujemy? <2; 36>\n System liczb: ");
         scanf("%d",&system_liczb);
+        
+        // Sprawdzenie czy podana liczba prawidlowa, jesli nie, to leci od poczatku...
+        if(system_liczb < 2 || system_liczb > 36){ printf("Nieprawidlowy system liczb :(\n"); continue; }
+        // Jesli nie zaczynalismy od poczatku, to znaczy ze liczba prawidlowa, mozemy dalej dzialac
+
+        // wprowadzimy nowa zmienna `a`
+        // zeby nie popsuc wartosc zmiennej `liczba_do_konwertowania`
         a=liczba_do_konwertowania;
-        for(i=0; a>0; i++){
+        
+        // i to indeks aktualnego znaku wyniku
+        i=0;
+        while (a>0){
+            // komunikat: co sie dzieje w tej petli
             printf("%2d |%6d %% %d = %c\n",i,a,system_liczb,x_mod_y(a,system_liczb));
+            
+            // wynik[i] = aktualny znak wyniku
             wynik[i] = x_mod_y(a,system_liczb);
             a/=system_liczb;
+            
+            // indeks rosnie, wiec jesli nastepny raz wejdziemy w ta petle
+            // juz do kolejnego miejsca bedziemy pisac
+            i++;
         }
-        wynik[i]=0; // koniec lancuchu znakow
-        strrev(wynik); // trzeba odwrocic wynik
+        // i roslo wczesniej, wiec pokazuje kolejne miejsce
+        // gdzie trzeba umiescic 0 (0 = koniec tekstu)
+        wynik[i]=0;
+        
+        // potem odwrucimy wynik, bo mamy od tylu zapisane
+        strrev(wynik);
+        
+        // w koncu ladnie wypiszemy wynik
         printf("%d (10) = %s (%d)\n",liczba_do_konwertowania, wynik, system_liczb);
 
-        printf("Powtorka? t=tak\n");
-    } while (toupper(getch())=='T');
+        // pytamy czy powtorzyc
+        printf("Powtorka? t=tak\n\n");
+    } while (tolower(getch())=='t'); // tolower() zeby dzialalo nawet
+                                     // jezeli uzytkownik ma CapsLock wlaczony
 }
-
 ```
