@@ -1,7 +1,8 @@
 # Programowanie 1
 
 Postaram się umieścić tu wszystkie zadania i rozwiązania przedmiotu *Programowanie 1*. 
-
+<details><summary>Wstęp - Hello World - Windows/Linux</summary><p>
+  
 ## Hello World!
 ```c
 #include <stdio.h>
@@ -35,7 +36,7 @@ int main(){
 | Nawigacja w wierszu poleceń | `cd ~/prog1` | `cd C:\prog1` |
 | Kompilacja | `gcc hello.c -o hello` | `gcc hello.c -o hello.exe` |
 | Uruchomienie | `./hello` | `hello.exe` |
-
+</p></details>
 
 ## Linki
 * [Najlepsze edytory tekstu na Linux (LMGTFY)](https://www.google.com/search?q=code+editor+for+linux)
@@ -43,6 +44,8 @@ int main(){
 * [15 najczęściej używanych opcji kompilatora *gcc*](https://www.thegeekstuff.com/2012/10/gcc-compiler-options/)
 * [Online edytor schematu blokowego](https://app.diagrams.net/)
 
+<details><summary>Lista 1</summary><p>
+  
 # Lista 1
 ## Zadanie 1
 ```c
@@ -143,6 +146,9 @@ int main(){
   return 0;
 }
 ```
+</p></details>
+<details><summary>Lista 2</summary><p>
+  
 # Lista 2
 ## Zadanie 1
 ```c
@@ -335,6 +341,9 @@ int main(){
     else printf("Ta liczba nie jest kwadratowa.");
 }
 ```
+</p></details>
+<details><summary>Lista 3</summary><p>
+  
 # Lista 3
 ## Zadanie 1 https://youtu.be/E4ZuUSWu2w0
 ![Schemat blokowy L3Z1](https://github.com/HelloProgramowanie/prog1/blob/main/L3Z1.drawio.png)
@@ -491,7 +500,9 @@ int main(){
     return 0;
 }
 ```
-
+</p></details>
+<details><summary>Lista 4</summary><p>
+  
 # Lista 4
 ## Zadanie 1
 ![Schemat blokowy L4Z1](https://github.com/HelloProgramowanie/prog1/blob/main/L4Z1.drawio.png)
@@ -588,6 +599,8 @@ int main(){
             printf("\n");
         }
 ```
+</p></details>
+  
 # Lista 5
 ## Zadanie 1
 ```c
