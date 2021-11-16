@@ -605,7 +605,7 @@ int main(){
 }
 ```
 ## Zadanie 2 (
-```c#include <stdio.h>
+```c
 #include <stdio.h>
 #include <string.h>
 
