@@ -605,13 +605,14 @@ int main(){
 }
 ```
 ## Zadanie 2 oraz Zadanie 3
-```c// printf() scanf()
+```c
+// printf() scanf()
 #include <stdio.h>
 
 // strrev()
 #include <string.h>
 
-// toupper()
+// tolower()
 #include <ctype.h>
 
 // getch()
