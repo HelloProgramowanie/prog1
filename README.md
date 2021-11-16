@@ -605,7 +605,6 @@ int main(){
 }
 ```
 ## Zadanie 2
-### dec -> bin
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -632,7 +631,40 @@ int main(){
     } while (toupper(getch())=='T');
 }
 ```
-### dec -> dowolny system (z wypisaniem kroków)
+## Zadanie 3
+```c
+#include <stdio.h>
+#include <string.h>
+
+char x_mod_16(int x){
+    int wynik = x%16;
+    if(wynik<10) return '0'+wynik;
+    else return 'A'-10+wynik;
+}
+
+int main(){
+
+    int liczba_do_konwertowania;
+    char wynik[17];
+    int i,a;
+
+    do{
+        printf("Podaj liczbe dziesiatna do konwertowania: ");
+        scanf("%d",&liczba_do_konwertowania);
+        a=liczba_do_konwertowania;
+        for(i=0; a>0; i++){
+            wynik[i] = x_mod_16(a);
+            a/=16;
+        }
+        wynik[i]=0; // koniec lancuchu znakow
+        strrev(wynik); // trzeba odwrocic wynik
+        printf("%d (10) = %s (16)\n",liczba_do_konwertowania, wynik);
+
+        printf("Powtorka? t=tak\n");
+    } while (toupper(getch())=='T');
+}
+```
+## Zadanie 2 i 3 uogólniony
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -646,7 +678,7 @@ char x_mod_y(int x, int y){
 int main(){
 
     int liczba_do_konwertowania;
-    int system_liczb = 2;
+    int system_liczb;
     char wynik[17];
     int i,a;
 
