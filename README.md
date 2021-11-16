@@ -604,7 +604,35 @@ int main(){
     printf("%d",a);
 }
 ```
-## Zadanie 2 (
+## Zadanie 2
+### dec -> bin
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+
+    int liczba_do_konwertowania;
+    char wynik[17];
+    int i,a;
+
+    do{
+        printf("Podaj liczbe dziesiatna do konwertowania: ");
+        scanf("%d",&liczba_do_konwertowania);
+        a=liczba_do_konwertowania;
+        for(i=0; a>0; i++){
+            wynik[i] = a%2+'0';
+            a/=2;
+        }
+        wynik[i]=0; // koniec lancuchu znakow
+        strrev(wynik); // trzeba odwrocic wynik
+        printf("%d (10) = %s (2)\n",liczba_do_konwertowania, wynik);
+
+        printf("Powtorka? t=tak\n");
+    } while (toupper(getch())=='T');
+}
+```
+### dec -> dowolny system (z wypisaniem kroków)
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -618,26 +646,27 @@ char x_mod_y(int x, int y){
 int main(){
 
     int liczba_do_konwertowania;
-    int system = 2;
+    int system_liczb = 2;
     char wynik[17];
     int i,a;
 
     do{
         printf("Podaj liczbe dziesiatna do konwertowania: ");
         scanf("%d",&liczba_do_konwertowania);
-        //printf("Na jaki system konwertowac: ");
-        //scanf("%d",&system);
+        printf("Na jaki system liczb konwertowac: ");
+        scanf("%d",&system_liczb);
         a=liczba_do_konwertowania;
         for(i=0; a>0; i++){
-            //printf("%2d |%6d %% %d = %c\n",i,a,system,x_mod_y(a,system));
-            wynik[i] = x_mod_y(a,system);
-            a/=system;
+            printf("%2d |%6d %% %d = %c\n",i,a,system_liczb,x_mod_y(a,system_liczb));
+            wynik[i] = x_mod_y(a,system_liczb);
+            a/=system_liczb;
         }
         wynik[i]=0; // koniec lancuchu znakow
         strrev(wynik); // trzeba odwrocic wynik
-        printf("%d (10) = %s (%d)\n",liczba_do_konwertowania, wynik, system);
+        printf("%d (10) = %s (%d)\n",liczba_do_konwertowania, wynik, system_liczb);
 
         printf("Powtorka? t=tak\n");
     } while (toupper(getch())=='T');
 }
+
 ```
