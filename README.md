@@ -738,3 +738,43 @@ int main(){
     return 0;
 }
 ```
+## Zadanie 5
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// kod z laboratorium
+typedef struct {
+   int id;
+   char imie[20];
+   char nazwisko[20];
+   int rok_u,mies_u,dzien_u;
+} tosoba;
+
+// funkcja co wruci liczbe losowa ze zakresu [min,max)
+int losowy(int min, int max){
+    return rand()%(max-min)+min;
+}
+
+int main(){
+    // kod z wykladu
+    srand((unsigned int)time(NULL));
+
+    tosoba ktos;
+    do{
+        // sprintf() dziala podobno do printf()-a tylko zamiast ekranu
+        // pisze formatowany tekst do zmiennej char*
+        sprintf(ktos.imie, "imie%d", losowy(0, 100));
+        sprintf(ktos.nazwisko, "naz%d", losowy(0, 100));
+        ktos.rok_u = losowy(1900, 2000);
+        ktos.mies_u = losowy(1, 13);
+        ktos.dzien_u = losowy(1, 32);
+        ktos.id = losowy(1, 100);
+        printf("Id: %d\nImie, nazwisko: %s, %s\nData urodzenia: %02d.%02d.%d r.\n",
+               ktos.id, ktos.imie, ktos.nazwisko, ktos.dzien_u, ktos.mies_u, ktos.rok_u);
+        printf("Generujmy jeszcze jedna osobe? 't'=tak\n");
+    } while(tolower(getch())=='t');
+    return 0;
+}
+```
