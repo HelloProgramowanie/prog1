@@ -736,7 +736,7 @@ int main(){
 
     printf("Mieszanie:    0%");
     
-    // dostatecznie duzo razy wymienimy dwuch losowych elementow zbioru
+    // dostatecznie duzo razy wymienimy dwoch losowych elementow zbioru
     for(int i=1; i<=100000000; i++){
         // zeby uzytkownik sie nie nudzil... ;)
         if(i%1000000==0) printf("%c%c%c%c%3d%%",8,8,8,8, i/1000000);  // printf("%c", 8); = backspace
