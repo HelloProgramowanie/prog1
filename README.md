@@ -929,6 +929,14 @@ int main(){
     t[i]=rand()%201-100;
   }
 
+
+  for(int j=0;j<10;j++) {
+    for(int i=0;i<10;i++){
+      printf("%5d", t[j*10+i]);
+    }
+    printf("\n");
+  }
+                           
   for(int j=99;j>0;j--) {
     for(int i=0;i<j;i++){
       if(t[i]>t[i+1]) {temp=t[i]; t[i]=t[i+1]; t[i+1]=temp;}
