@@ -600,6 +600,7 @@ int main(){
         }
 ```
 </p></details>
+<details><summary>Lista 5</summary><p>
   
 # Lista 5
 ## Zadanie 1
@@ -791,5 +792,156 @@ int main(){
         printf("Generujmy jeszcze jedna osobe? 't'=tak\n");
     } while(tolower(getch())=='t');
     return 0;
+}
+```
+  
+</p></details>
+
+# Lista 6
+## Zadanie 1
+
+```c
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <conio.h>
+  
+typedef struct {
+  char imie[32];
+} s;
+
+  int N;
+  s t[10];
+int main(){
+  do{
+    printf("N=");
+    scanf("%d", &N);
+    for(int i=0;i<N;i++){
+      scanf("%s", t[i].imie);
+    }
+    int tyle_imion_sie_konczy_na_a = 0;
+    for(int i=0;i<N;i++){
+      if(t[i].imie[strlen(t[i].imie)-1]=='a') tyle_imion_sie_konczy_na_a++;
+    }
+    printf("tyle_imion_sie_konczy_na_a = %d\n", tyle_imion_sie_konczy_na_a);
+    printf("Ponownie? t=tak\n");
+  } while (toupper(getch())=='T');
+  return 0;
+}
+```
+  
+## Zadanie 2
+```c
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <conio.h>
+#include <stdlib.h>
+
+int t[100];
+int r;
+
+int main(){
+  do{
+    srand(time(NULL));
+    for(int i=0;i<100;i++){
+      r=rand()%80;
+      if(r<40){ r= -r-11;} else { r -=29;}
+      t[i] = r;
+    }
+    for(int i=0;i<10;i++){
+      for(int j=0;j<10;j++){
+        printf("%4d", t[i*10+j]);
+      }
+      printf("\n");
+    }
+    printf("Ponownie? t=tak\n");
+  } while (toupper(getch())=='T');
+  return 0;
+}
+  
+```
+  
+## Zadanie 3
+```c
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <conio.h>
+  
+typedef struct {
+  int id;
+  char imie[20];
+  char nazwisko[20];
+  int wiek;
+} tosoba;
+
+void t_read(tosoba *t){
+  printf("id=");
+  scanf("%d", &(t->id));
+  printf("  imie=");
+  scanf("%s", t->imie);
+  printf("  nazwisko=");
+  scanf("%s", t->nazwisko);
+  printf("  wiek=");
+  scanf("%d", &(t->wiek));
+}
+
+void t_write(tosoba t){
+  printf("id=%d\n", t.id);
+  printf("  imie=%s\n", t.imie);
+  printf("  nazwisko=%s\n", t.nazwisko);
+  printf("  wiek=%d\n", t.wiek);
+}
+
+tosoba t[5];
+
+int main(){
+  do{
+    for(int i=0;i<5;i++){
+      t_read(&t[i]);
+    }
+    printf("Podaj imie do wyszukania: ");
+    char s[20];
+    scanf("%s", s);
+    for(int i=0;i<5;i++){
+      if(strcmp(t[i].imie, s)==0){
+        t_write(t[i]);
+      }
+    }
+    printf("Ponownie? t=tak\n");
+  } while(toupper(getch())=='T');
+  return 0;
+}
+```
+  
+## Zadanie 4
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int t[100];
+int temp;
+int main(){
+  srand(time(NULL));
+  for(int i=0;i<100;i++){
+    t[i]=rand()%201-100;
+  }
+
+  for(int j=99;j>0;j--) {
+    for(int i=0;i<j;i++){
+      if(t[i]>t[i+1]) {temp=t[i]; t[i]=t[i+1]; t[i+1]=temp;}
+    }
+  }
+
+  for(int j=0;j<10;j++) {
+    for(int i=0;i<10;i++){
+      printf("%5d", t[j*10+i]);
+    }
+    printf("\n");
+  }
+
+  return 0;
 }
 ```
