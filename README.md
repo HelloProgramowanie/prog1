@@ -840,7 +840,8 @@ int main(){
 
 int t[100];
 int r;
-
+int suma_parzystych;
+int temp;
 int main(){
   do{
     srand(time(NULL));
@@ -849,16 +850,23 @@ int main(){
       if(r<40){ r= -r-11;} else { r -=29;}
       t[i] = r;
     }
+	suma_parzystych=0;
     for(int i=0;i<10;i++){
       for(int j=0;j<10;j++){
-        printf("%4d", t[i*10+j]);
+		temp = t[i*10+j];
+		if(temp%2==0){
+			suma_parzystych+=temp;
+		}
+        printf("%4d", temp);
       }
       printf("\n");
     }
+    printf("Suma parzystych: %d\n", suma_parzystych);
     printf("Ponownie? t=tak\n");
   } while (toupper(getch())=='T');
   return 0;
 }
+
   
 ```
   
