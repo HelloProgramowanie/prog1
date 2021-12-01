@@ -1,7 +1,9 @@
 # Programowanie 1
 
 Postaram się umieścić tu wszystkie zadania i rozwiązania przedmiotu *Programowanie 1*. 
-<details><summary>Wstęp - Hello World - Windows/Linux</summary><p>
+<details>
+	<summary>Wstęp - Hello World - Windows/Linux</summary>
+	<p>
   
 ## Hello World!
 ```c
@@ -36,7 +38,8 @@ int main(){
 | Nawigacja w wierszu poleceń | `cd ~/prog1` | `cd C:\prog1` |
 | Kompilacja | `gcc hello.c -o hello` | `gcc hello.c -o hello.exe` |
 | Uruchomienie | `./hello` | `hello.exe` |
-</p></details>
+</p>
+</details>
 
 ## Linki
 * [Najlepsze edytory tekstu na Linux (LMGTFY)](https://www.google.com/search?q=code+editor+for+linux)
@@ -44,8 +47,10 @@ int main(){
 * [15 najczęściej używanych opcji kompilatora *gcc*](https://www.thegeekstuff.com/2012/10/gcc-compiler-options/)
 * [Online edytor schematu blokowego](https://app.diagrams.net/)
 
-<details><summary>Lista 1</summary><p>
-  
+<details>
+	<summary>Lista 1</summary>
+	<p>
+
 # Lista 1
 ## Zadanie 1
 ```c
@@ -126,6 +131,7 @@ int main(){
 }
 ```
 wykorzystując że `x*2-x=x` , oraz `x/(1/y)=x*y`
+
 ## Zadanie 5
 ```c
 #include <stdio.h>
@@ -148,7 +154,7 @@ int main(){
 ```
 </p></details>
 <details><summary>Lista 2</summary><p>
-  
+
 # Lista 2
 ## Zadanie 1
 ```c
@@ -796,10 +802,10 @@ int main(){
 ```
   
 </p></details>
+<details><summary>Lista 6</summary><p>
 
 # Lista 6
 ## Zadanie 1
-
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -829,7 +835,7 @@ int main(){
   return 0;
 }
 ```
-  
+
 ## Zadanie 2
 ```c
 #include <stdio.h>
@@ -866,10 +872,8 @@ int main(){
   } while (toupper(getch())=='T');
   return 0;
 }
-
-  
 ```
-  
+
 ## Zadanie 3
 ```c
 #include <stdio.h>
@@ -922,9 +926,8 @@ int main(){
   return 0;
 }
 ```
-  
-## Zadanie 4
 
+## Zadanie 4
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -958,6 +961,164 @@ int main(){
     printf("\n");
   }
 
+  return 0;
+}
+```
+
+</p></details>
+
+# Lista 7
+## Zadanie 1
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+  int n;
+  printf("Podaj N: ");
+  scanf("%d", &n);
+  while(n<0 || n>10){
+    printf("N nieprawidlowy podaj ponownie: ");
+    scanf("%d", &n);
+  }
+  srand(time(0));
+
+  int m1[10][10], m2[10][10];
+
+  for(int i=0; i<n; i++){
+    for(int j=0; j<n; j++){
+      m1[i][j] = rand()%19-9;
+    }
+  }
+
+  for(int i=0; i<n; i++){
+    for(int j=0; j<n; j++){
+      m2[j][i] = m1[i][j];
+    }
+  }
+
+  for(int i=0; i<n; i++){
+    for(int j=0; j<n; j++){
+      printf("%5d", m1[i][j]);
+    }
+    printf("\n");
+  }
+
+  printf("\n");
+  for(int i=0; i<n; i++){
+    for(int j=0; j<n; j++){
+      printf("%5d", m2[i][j]);
+    }
+    printf("\n");
+  }
+
+  return 0;
+}
+```
+## Zadanie 2
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+  int temp;
+
+  int m[5][5];
+  int suma=0;
+
+  for(int i=0; i<5; i++){
+    for(int j=0; j<5; j++){
+      do{
+          printf("M[%d][%d] = ", i, j);
+          scanf("%d", &temp);
+      } while (temp < -5 || temp == 0 || temp >= 10);
+      m[i][j] = temp;
+    }
+  }
+
+  for(int i=0; i<5; i++){
+    for(int j=0; j<5; j++){
+      printf("%3d", m[i][j]);
+    }
+    printf("\n");
+  }
+
+  do{
+    printf("Suma ktorej kolumny? (1<=N<=5)\n");
+    scanf("%d", &temp);
+  } while (temp < 1 || temp > 5);
+  for(int i=0;i<5;i++){
+    suma+=m[i][temp-1];
+  }
+  printf("%d", suma);
+  return 0;
+}
+```
+## Zadanie 3
+```c
+#include <stdio.h>
+
+int main(){
+  int n;
+  printf("Podaj N: ");
+  scanf("%d", &n);
+  while(n<0 || n>10){
+    printf("N nieprawidlowy podaj ponownie: ");
+    scanf("%d", &n);
+  }
+  srand(time(0));
+
+  int m[10][10];
+
+  for(int i=0; i<n; i++){
+    for(int j=0; j<n; j++){
+      m[i][j] = rand()%21-10;
+    }
+  }
+
+  for(int i=0; i<n; i++){
+    for(int j=0; j<n; j++){
+      printf("%5d", m[i][j]);
+    }
+    printf("\n");
+  }
+
+  int a=0;
+  int b=0;
+  for(int i=0;i<n;i++){
+    a+=m[i][i];
+    b+=m[i][n-1-i];
+  }
+  printf("Sumy glownej przekatnej: %d\nSuma drugiej przekatnej: %d\n", a, b);
+
+  return 0;
+}
+```
+## Zadanie 4
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+  srand(time(0));
+
+  double m[5][5];
+
+  for(int i=0; i<5; i++){
+    for(int j=i; j<5; j++){
+      m[i][j] = (double)rand()/RAND_MAX*10;
+    }
+  }
+
+  for(int i=0; i<5; i++){
+    for(int j=0; j<i; j++){
+      printf("     ");
+    }
+    for(int j=i; j<5; j++){
+      printf("%5.2f", m[i][j]);
+    }
+    printf("\n");
+  }
   return 0;
 }
 ```
