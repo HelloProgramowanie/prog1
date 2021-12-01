@@ -1105,16 +1105,16 @@ int main(){
   double m[5][5];
 
   for(int i=0; i<5; i++){
+    for(int j=0; j<i; j++){
+      m[i][j] = 0;
+    }
     for(int j=i; j<5; j++){
       m[i][j] = (double)rand()/RAND_MAX*10;
     }
   }
 
   for(int i=0; i<5; i++){
-    for(int j=0; j<i; j++){
-      printf("     ");
-    }
-    for(int j=i; j<5; j++){
+    for(int j=0; j<5; j++){
       printf("%5.2f", m[i][j]);
     }
     printf("\n");
